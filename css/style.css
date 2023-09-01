@@ -1,0 +1,946 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    transition: .3 ease all;
+}
+body.dark{
+    background: #191c32;
+    color: #fff;
+}
+/* body.dark h2{
+    color: #fff;
+} */
+.navbar {
+    /* background-color: #191c32; */
+    width: 100%;
+    height: 80px;
+    padding: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+.switch {
+    background: #343D5B;
+    border-radius: 100px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #3e75b8;
+}
+.switch::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3 ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+.switch.active{
+    background: #fff;
+    color: #000;
+}
+.switch.active::after {
+    right: 0;
+    left: unset;
+}
+.menu {
+    display: flex;
+    width: 60%;
+    justify-content: end;
+}
+.menu li {
+    list-style: none;
+}
+.menu a {
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 20px;
+}
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+.menu .active {
+    color: #fff;
+}
+.menu a:hover{
+    background-color: #91c2ff;
+    color: #191c32;
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    margin: 15px 0;
+    background-color: #3e75b8;
+    border-radius: 20px;
+}
+.menu li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical li a {
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+}
+.content {
+    width: 100%;
+    height: 100vh;
+}
+.home {
+    background-image: url(../img/9442.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.destinos-travel {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/home.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.content-destinos{
+    width: 100%;
+    height: 70vh;
+}
+.main{
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+}
+.wrapp{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    color: #3e75b8;
+    padding-bottom: 40px;
+    text-align: center;
+    text-wrap: balance;
+    margin: 0;
+}
+.destinos-lugar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: start;
+    align-items: end;
+    FONT-SIZE: 50px;
+    color: #3e75b8;
+    text-align: center;
+    text-wrap: balance;
+}
+/* TRAVEL */
+.travel{
+    /* background-image: url(../img/nube.jpg); */
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+    height: 100%;
+}
+.contenedor{
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+}
+.destinos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 45px;
+    color: #3e75b8;
+    text-transform: uppercase;
+    margin: 0;
+}
+.destinos-text{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    color: #f7ae41;
+    text-wrap: balance;
+    text-align: center;
+    margin: 0;
+}
+.inf {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    gap: 1rem;
+}
+.card{
+    position: relative;
+    width: 349px;
+    height: 300px;
+    text-align: center;
+    transform: scale(var(--escala, 1));
+    transition: transform 0.50s;
+}
+.card:hover{
+    --escala: 1.05;
+    /* cursor:pointer; */
+}
+.card a {
+    color: #fff;
+    text-decoration: none;
+}
+.card h1 {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+}
+.card-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/Buenos-Aires.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/brasil.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/sudamerica.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/europa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-5 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/USA.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-6 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/asia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-7 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/caribe.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-8 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/africa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-9 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/venezuela.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* BEST */
+
+.best {
+    height: 100%;
+}
+.carta {
+    position: relative;
+    width: 257px;
+    height: 500px;
+    text-align: center;
+    transform: scale(var(--escala, 1));
+    transition: transform .50s;
+    color: #000;
+}
+.carta:hover {
+    --escala: 1.05;
+}
+.servicios {
+    text-align: left;
+    margin: 10px 20px 10px 20px;
+}
+.usd {
+    text-align: end;
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+.usd span {
+    color: #91c2ff;
+}
+.card-title {
+    margin-bottom: 0.9rem;
+    margin-top: 0.9rem;
+    font-size: 1.5rem;
+}
+.carta .img-inf{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.sombra {
+    box-shadow: 0px 5px 15px 0px rgba(97,97,97,0.54);
+    background-color: #fff;
+}
+.btn {
+    background-color: #3e75b8;
+    display: flex;
+    justify-content: center;
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+/* FOOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: #191c32;
+    color: #fff;
+    border-top:  solid #222541;
+}
+
+.footer-content h2 {
+    font-size: 3em;
+    margin: 0 auto;
+    color: #fff;
+}
+.footer-content h5 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+}
+.sotial-network {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-top: 20px;
+    align-items: center;
+}
+.sotial-network i {
+    cursor: pointer;
+    border: 0.5px solid hsla(0,0%,100%,.26);
+    border-radius: 3.125rem;
+    font-size: 2rem;
+    height: 3.75rem;
+    width: 3.75rem;
+    text-align: center;
+    padding-top: 0.75rem;
+}
+.sotial-network .instagram:hover {
+    background-color: rgb(228, 64, 95);
+    color: #fff;
+    box-shadow: none;
+}
+.sotial-network .linkedin:hover{
+    background-color: #0e76a8;
+    color: #fff;
+    box-shadow: none;
+}
+.sotial-network .whatsapp:hover{
+    background-color: #1d9119;
+    color: #fff;
+    box-shadow: none;
+}
+.sotial-network .github:hover{
+    background-color: #494949;
+    color: #fff;
+    box-shadow: none;
+}
+.instagram {
+    color: rgb(228, 64, 95);
+}
+
+.linkedin {
+    color: #0e76a8;
+}
+
+.whatsapp {
+    color: #1d9119;
+}
+.github {
+    color: #494949;
+}
+/* DESTINOS */
+.card-destinos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 50px auto;
+    gap: 1rem;
+}
+.informacion-destinos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 492px;
+    /* height: 246px; */
+    text-align: center;
+}
+.text-destinos {
+    color: #000;
+    width: 100%;
+    margin: 10px;
+}
+.text-destinos h1 {
+    color: #f7ae41;
+    font-size: 24px;
+}
+.text-destinos p {
+    color: #283953;
+}
+.text-destinos h1, p{
+    margin: 10px 10px 10px 0px;
+}
+.text-destinos a{
+    float: right;
+    width: 130px;
+    margin: 20px 30px 10px 0px;
+}
+.btn-destinos {
+    background-color: #3e75b8;
+    display: flex;
+    justify-content: center;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+hr {
+    border: none;
+    width: 210px;
+    height: 2px;
+    color: #f7ae41;
+    background-color: #f7ae41;
+}
+.destinos-1{
+    background-image: url(../img/destinos/argentina/buenos-aires.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.destinos-2{
+    background-image: url(../img/destinos/argentina/laCarta.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.destinos-3{
+    background-image: url(../img/destinos/argentina/sanjuan.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.destinos-4{
+    background-image: url(../img/destinos/argentina/mendoza.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-subdestinos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 50px auto;
+    gap: 1rem;
+    width: 60%;
+}
+.text-subdestinos {
+    color: #000;
+    width: 100%;
+    margin: 30px;
+}
+.text-subdestinos h1, h2, h3, h5 {
+    color: #283953;
+}
+.text-subdestinos p, h1, h2, h3, h5{
+    margin: 20px;
+}
+.text-subdestinos a {
+    margin-left: 20px;
+}
+.text-subdestinos li {
+    margin: 20px 50px 20px 70px;
+}
+.text-subdestinos h2 {
+    font-size: 20px;
+}
+.sub {
+    color: #fff;
+}
+
+/* ARGENTINA */
+.subdestinos-travel-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/argentina/subdestinobuenosaires.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-travel-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/argentina/subdestinolacarta.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-travel-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/argentina/sanjuan.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-travel-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/argentina/mendoza.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+/* BRASIL */
+.brasil-1{
+    background-image: url(../img/destinos/brasil/manaus-selva.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-2{
+    background-image: url(../img/destinos/brasil/maceio-maragogi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-3{
+    background-image: url(../img/destinos/brasil/cabo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-4{
+    background-image: url(../img/destinos/brasil/angra.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-5{
+    background-image: url(../img/destinos/brasil/rio-janeiro.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-6{
+    background-image: url(../img/destinos/brasil/canasvieiras.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-7{
+    background-image: url(../img/destinos/brasil/camboriu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-8{
+    background-image: url(../img/destinos/brasil/rio-janeiro.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-9{
+    background-image: url(../img/destinos/brasil/buziu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-10{
+    background-image: url(../img/destinos/brasil/natal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-11{
+    background-image: url(../img/destinos/brasil/maceio.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brasil-12{
+    background-image: url(../img/destinos/brasil/porto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subdestinos-brasil-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/manaus-selva.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/maceio-maragogi.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/cabo.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/angra.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-5 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/rio-janeiro.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-6 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/canasvieiras.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-7 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/camboriu.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-8 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/rio-janeiro.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-9 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/buziu.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-10 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/natal.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-11 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/maceio.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-brasil-12 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/brasil/porto.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+
+/* EUROPA */
+.europa-1{
+    background-image: url(../img/europa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ESTADOS UNIDOS */
+.estadosUnidos-1{
+    background-image: url(../img/destinos/estadosUnidos/orlando.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estadosUnidos-2{
+    background-image: url(../img/destinos/estadosUnidos/miami.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subdestinos-estadosUnidos-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/estadosUnidos/orlando.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+    background-position: 50% 70%;
+}
+.subdestinos-estadosUnidos-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/estadosUnidos/miami.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+/* ASIA */
+.asia-1 {
+    background-image: url(../img/destinos/asia/dubai.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.asia-2 {
+    background-image: url(../img/destinos/asia/bangkok.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subdestinos-asia-1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/asia/dubai.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 75%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-asia-2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/asia/bangkok.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 75%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+/* AFRICA */
+.africa-1 {
+    background-image: url(../img/destinos/africa/sudafrica.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subdestinos-africa-1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/africa/camello.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+/* COLOMBIA */
+.colombia-1{
+    background-image: url(../img/destinos/colombia/colombia.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subdestinos-colombia-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/colombia/colombia.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+/* CARIBE */
+.caribe-1{
+    background-image: url(../img/destinos/caribe/single.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.caribe-2{
+    background-image: url(../img/destinos/caribe/sanAndres.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.caribe-3{
+    background-image: url(../img/destinos/caribe/curazao.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.caribe-4{
+    background-image: url(../img/destinos/caribe/aruba.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.caribe-5{
+    background-image: url(../img/destinos/caribe/bayahibe.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.caribe-6{
+    background-image: url(../img/destinos/caribe/puntaCana.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subdestinos-caribe-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/caribe/single.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-caribe-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/caribe/sanAndres.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-caribe-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/caribe/curazao.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-caribe-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/caribe/aruba.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-caribe-5 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/caribe/bayahibe.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 75%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-caribe-6 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/caribe/puntaCana.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 75%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+/* VENEZUELA */
+.venezuela-1 {
+    background-image: url(../img/destinos/venezuela/saltoAngel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.venezuela-2 {
+    background-image: url(../img/destinos/venezuela/losRoques.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.venezuela-3 {
+    background-image: url(../img/destinos/venezuela/islaMargarita.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subdestinos-venezuela-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/venezuela/saltoAngel.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 75%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-venezuela-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/venezuela/losRoques.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.subdestinos-venezuela-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/destinos/venezuela/islaMargarita.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+}
